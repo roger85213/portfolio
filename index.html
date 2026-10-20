@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Roger Chang — Software products and Blender tools</title>
+<meta name="description" content="Roger Chang (張瀚), independent product builder in Taiwan. Software products and Blender tools.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="wrap top">
+  <p class="name">Roger Chang <span lang="zh-Hant">張瀚</span></p>
+  <a href="mailto:contact@tallyfu.com">contact@tallyfu.com</a>
+</header>
+
+<main class="wrap">
+<section class="intro">
+  <h1>I design and ship software products and Blender tools from Taiwan.</h1>
+  <p>I decide what each product does, review the work, and test it before release. I use AI assistance for parts of the code; every release is checked and approved by me.</p>
+  <p class="zh" lang="zh-Hant">台灣的獨立產品開發者，製作軟體產品與 Blender 工具。</p>
+</section>
+
+<section class="project" id="xr-export-checker">
+  <div class="head">
+    <h2>XR Export Checker for Blender</h2>
+    <span class="tag">In development · planned for Superhive</span>
+  </div>
+  <p>Checks a scene against triangle and texture budgets for Meta Quest 2, Meta Quest 3, Apple Vision Pro, or your own Custom limits, then exports glTF/GLB or USDZ with one click.</p>
+
+  <figure>
+    <img src="img/xr-panel-wide.jpg" width="1200" height="660" alt="Blender 5.2.2 viewport with a widened N-panel showing the XR Check tab: Meta Quest 2 preset and the warning Suzanne_HighPoly: 251,904 tris (limit 75,000)">
+    <figcaption>Screenshot: the XR Check tab in Blender 5.2.2, Meta Quest 2 preset, after Check Budget on the demo scene.</figcaption>
+  </figure>
+
+
+  <figure>
+    <video src="img/xr-workflow-demo.mp4" width="1440" height="570" autoplay muted loop playsinline controls preload="metadata" poster="img/xr-panel-wide.jpg"></video>
+    <figcaption>Screen recording (29 s) in Blender 5.2.2: Check Budget flags Suzanne_HighPoly at 251,904 tris, a Decimate modifier (ratio 0.25) is added and applied (62,975 tris), and the next check comes back clean. The steps were triggered by a script so the recording is repeatable; the panel and results are the add-on's real output. <a href="img/xr-workflow-demo.gif">GIF version</a>.</figcaption>
+  </figure>
+
+  <div class="pair">
+    <figure>
+      <img src="img/xr-demo-render.jpg" width="1200" height="750" loading="lazy" alt="Cycles render of the demo scene: a subdivided Suzanne head on a pedestal next to a small sphere">
+      <figcaption>Demo scene, rendered in Cycles (Blender 5.2.2).</figcaption>
+    </figure>
+    <figure class="report">
+      <div class="term" role="img" aria-label="Check result text">
+        <p class="dim">Device: Meta Quest 2 · Checking: whole visible scene</p>
+        <p>Found 1 budget problem</p>
+        <p class="warn">Suzanne_HighPoly: 251,904 tris (limit 75,000)</p>
+      </div>
+      <figcaption>Illustration: the add-on's actual check output for the same scene, restyled for this page.</figcaption>
+    </figure>
+  </div>
+
+  <ul class="features">
+    <li>Per-object and per-scene triangle limits, longest texture side, and texture memory (shown as an uncompressed upper bound)</li>
+    <li>Presets are suggested values, not official Meta or Apple numbers; Custom lets you set your own</li>
+    <li>Counts meshes, curves, text and collection instances after modifiers</li>
+    <li>Export selected objects only; optional Draco compression for glTF</li>
+    <li>Warnings for textures inside node groups, missing UV maps, missing image files, and objects USDZ can't carry</li>
+    <li>Checks never block export; hidden objects are left out of both the check and the file</li>
+    <li>Blender 4.2 LTS and 5.x · works offline, no data collection</li>
+  </ul>
+</section>
+
+<section class="project" id="renders">
+  <div class="head">
+    <h2>Procedural material study</h2>
+    <span class="tag">Blender render</span>
+  </div>
+  <figure>
+    <img src="img/ceramics-cycles.jpg" width="1600" height="1000" loading="lazy" alt="Cycles render of a glazed vase with wavy teal rings, a terracotta ring and two brass spheres on a warm grey backdrop">
+    <figcaption>Cycles render in Blender 5.2.2. The vase is a spun profile; all materials are procedural node setups (wave and noise textures), no image textures.</figcaption>
+  </figure>
+</section>
+
+<section class="project" id="fuqi-3d">
+  <div class="head">
+    <h2>Fuqi: a 3D model of my dog from phone photos</h2>
+    <span class="tag">Personal project</span>
+  </div>
+  <p>A 3D model of my own dog, Fuqi, made from ordinary phone photos. TripoSG produced the base mesh. Blender Python scripts then added procedural fur cards, eyes, nose and photo-projected textures, and fitted the model to a licensed third-party 57-bone Shih Tzu rig so it uses that rig's animation set. The result is exported to Unity URP at about 89k triangles and 4 draw calls.</p>
+  <p>I directed the project and reviewed every version, asking for specific fixes each round. The base mesh is AI-generated, and the Blender scripts were written with AI assistance under my direction.</p>
+  <div class="pair">
+    <figure>
+      <img src="img/fuqi-blender-cycles-face34.jpg" width="850" height="680" loading="lazy" alt="Three-quarter close-up of a white fluffy dog model's face rendered in Blender Cycles on a white background">
+      <figcaption>Blender Cycles render, three-quarter face view.</figcaption>
+    </figure>
+    <figure>
+      <img src="img/fuqi-unity-urp.jpg" width="960" height="680" loading="lazy" alt="The same dog model standing on a checkered floor in a Unity scene">
+      <figcaption>The exported model running in Unity URP (screenshot).</figcaption>
+    </figure>
+  </div>
+  <figure>
+    <img src="img/fuqi-blender-vs-unity.jpg" width="1300" height="910" loading="lazy" alt="Comparison grid: face and side views of the dog, Blender Cycles render on the left, Unity URP real-time on the right">
+    <figcaption>Same model, Blender Cycles render (left) and Unity URP real-time (right).</figcaption>
+  </figure>
+</section>
+
+<section class="project">
+  <div class="head">
+    <h2><a href="https://tallyfu.com">TallyFu <span lang="zh-Hant">複帳通</span></a></h2>
+    <span class="tag live">Live</span>
+  </div>
+  <p>A record-keeping tool for Taiwanese investors who buy US stocks through sub-brokerage: it tracks trades, cost basis, and realized gains. It does not give investment advice. Backend: FastAPI and PostgreSQL. It also has a free <a href="https://tallyfu.com/tools/fifo-calculator">FIFO calculator</a> that works without an account.</p>
+</section>
+
+<section class="project">
+  <div class="head">
+    <h2><a href="https://www.kaiyepage.com">Kaiye Page <span lang="zh-Hant">開頁</span></a></h2>
+    <span class="tag live">Live</span>
+  </div>
+  <p>A website builder with built-in booking for small businesses. A 14-day free trial is open; online payment is not open yet.</p>
+</section>
+</main>
+
+<footer class="wrap">
+  <p>Contact: <a href="mailto:contact@tallyfu.com">contact@tallyfu.com</a></p>
+</footer>
+</body>
+</html>
