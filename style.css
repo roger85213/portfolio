@@ -22,7 +22,8 @@ video{display:block;width:100%;height:auto;border:1px solid var(--line);border-r
 img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:4px;background:#ddd}
 figcaption{font-size:.875rem;color:var(--mute);margin-top:.4rem}
 .pair{display:grid;gap:0 1.25rem}
-@media(min-width:44rem){.pair{grid-template-columns:1.6fr 1fr;align-items:start}}
+.pair figure.panel{max-width:22rem}
+@media(min-width:44rem){.pair{grid-template-columns:1fr 22rem;align-items:end}.pair figure.panel{max-width:none}}
 .term{background:#222220;color:#e8e6e1;border-radius:4px;padding:1rem;font:.85rem/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;flex:1}
 .term p{margin:0 0 .4rem}.term .dim{color:#9a978f}.term .warn{color:#f0a36f}
 .report{display:flex;flex-direction:column}
