@@ -28,16 +28,18 @@
   <p>Checks a scene against triangle and texture budgets for Meta Quest 2, Meta Quest 3, Apple Vision Pro, or your own Custom limits, then exports glTF/GLB or USDZ from the same panel.</p>
 
   <div class="pair">
-    <figure>
-      <img src="img/desk-scene-cycles.jpg" width="1600" height="1000" alt="Cycles render of a small desk scene: oak desk top, a terracotta-glazed mug, a stack of three cloth-bound books, a pencil, a potted plant and the base of a desk lamp">
-      <figcaption>Test scene: a small desk I built procedurally in Blender 5.2.2 (no downloaded assets), rendered in Cycles. Some objects are deliberately over budget.</figcaption>
-    </figure>
+    <div class="pair-main">
+      <figure>
+        <img src="img/desk-scene-cycles.jpg" width="1600" height="1000" alt="Cycles render of a small desk scene: oak desk top, a terracotta-glazed mug, a stack of three cloth-bound books, a pencil, a potted plant and the base of a desk lamp">
+        <figcaption>Test scene: a small desk I built procedurally in Blender 5.2.2 (no downloaded assets), rendered in Cycles. Some objects are deliberately over budget.</figcaption>
+      </figure>
+      <p>On this scene the check reports five problems: the mug at 180,224 triangles (limit 75,000), a 4096&nbsp;px book cover (limit 2048), and three procedural materials (noise, wave, bump nodes) that glTF won't carry. Over-budget rows get an error icon; export notes get an info icon. Each row has a button that selects the object.</p>
+    </div>
     <figure class="panel">
       <img src="img/xr-panel-desk.png" width="508" height="1232" alt="XR Export Checker 0.1.1 panel with Meta Quest 2 selected after Check Budget: Found 5 problems, Select All Problems, then five rows: Mug_Ceramic 180,224 tris (limit 75,000) and Book_1 texture Book_Cover_4K 4096px (limit 2048) marked as errors, and three info rows for shader nodes that may not export on Desk_Top, Mug_Handle and Mug_Ceramic; Export section with Draco option, Export glTF and Export USDZ">
       <figcaption>Screenshot (v0.1.1, UI scale 2×): Check Budget on that scene with the Quest 2 preset. All five rows are shown.</figcaption>
     </figure>
   </div>
-  <p>On this scene the check reports five problems: the mug at 180,224 triangles (limit 75,000), a 4096&nbsp;px book cover (limit 2048), and three procedural materials (noise, wave, bump nodes) that glTF won't carry. Over-budget rows get an error icon; export notes get an info icon. Each row has a button that selects the object.</p>
 
   <figure>
     <video src="img/xr-workflow-demo.mp4" width="1440" height="570" muted loop playsinline controls preload="metadata" poster="img/xr-workflow-demo-poster.jpg"></video>

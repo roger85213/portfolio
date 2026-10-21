@@ -23,10 +23,11 @@ img{display:block;width:100%;height:auto;border:1px solid var(--line);border-rad
 figcaption{font-size:.875rem;color:var(--mute);margin-top:.4rem}
 .pair{display:grid;gap:0 1.25rem}
 .pair figure.panel{max-width:22rem}
-@media(min-width:44rem){.pair{grid-template-columns:1fr 22rem;align-items:end}.pair figure.panel{max-width:none}}
+@media(min-width:44rem){.pair{grid-template-columns:1fr 22rem;align-items:start}.pair figure.panel{max-width:none}}
 .term{background:#222220;color:#e8e6e1;border-radius:4px;padding:1rem;font:.85rem/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;flex:1}
 .term p{margin:0 0 .4rem}.term .dim{color:#9a978f}.term .warn{color:#f0a36f}
 .report{display:flex;flex-direction:column}
 .features{padding-left:1.1rem;margin:1.5rem 0 0}
 .features li{margin:.3rem 0}
 footer{padding-top:2rem;padding-bottom:3rem;color:var(--mute)}
+.pair-main>p{margin-top:1rem}
